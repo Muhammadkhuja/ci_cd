@@ -5,7 +5,7 @@ RUN npm ci
 ADD . .
 RUN npm run build --prod
 
-FROM node:alphine
+FROM node:alpine
 WORKDIR /app
 COPY --from=builder /app/dist ./dist
 ADD package*.json ./
